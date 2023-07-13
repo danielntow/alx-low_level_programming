@@ -1,6 +1,13 @@
 #include <stdio.h>
 
 int main(void)
+
+/**
+ * main - calcutling the size of the various variables in bytee
+ *
+ * Return: Always 0 (Success)
+ */
+
 {
 printf("Size of a char: %lu byte(s)\n", sizeof(char));
 printf("Size of an int: %lu byte(s)\n", sizeof(int));
