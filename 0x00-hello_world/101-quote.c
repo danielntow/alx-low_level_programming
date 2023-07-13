@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-**
+/**
 * main - calcutling the size of the various variables in bytee
 *
 * Return: Always 0 (Success)
