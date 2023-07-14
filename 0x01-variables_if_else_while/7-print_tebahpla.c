@@ -15,7 +15,7 @@ int main(void)
 char start = 'a';
 char end = 'z';
 char ch;
-for (ch =end; ch >=start; ch--)
+for (ch = end; ch >= start; ch--)
 {
 	putchar(ch);
 }
