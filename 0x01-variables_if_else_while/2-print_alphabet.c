@@ -18,8 +18,8 @@ char ch;
 for (ch = start; ch <= end; ch++)
 {
 	putchar(ch);
-	putchar('\n');
 }
 
+putchar('\n');
 return (0);
 }
