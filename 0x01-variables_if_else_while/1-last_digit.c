@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 /**
 * main - Entry point
 *
@@ -9,18 +8,13 @@
 *
 * Return: Always 0 (Success)
 */
-
 int main(void)
 {
 int n;
-
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-
-/* printf("abs %d and n =[%d] and (n %% 10)=[%d] \n ", abs(n % 10), n, (n % 10));*/
 /* your code goes there */
 printf("Last digit of %d is %d and is ", n, n % 10);
-
 if (n % 10 > 5)
 {
 	printf("greater than 5\n");
