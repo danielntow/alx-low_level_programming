@@ -14,8 +14,8 @@ int main(void)
 {
 char start = 'a';
 char end = 'z';
-
-for (char ch = start; ch <= end; ch++)
+char ch;
+for (ch = start; ch <= end; ch++)
 {
 	putchar(ch);
 	putchar('\n');
