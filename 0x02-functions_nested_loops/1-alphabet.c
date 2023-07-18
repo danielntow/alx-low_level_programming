@@ -1,33 +1,19 @@
-#include <unistd.h>
+#include <stdio.h>
+#include "main.h"
 
 /**
- * _putchar - Custom putchar function
- * @c: The character to be printed
+ *print_alphabet-function begins
  *
- * Return: On success, returns the character printed.
- * On error, returns -1.
+ *Return:function ends
  */
-int _putchar(char c)
+void print_alphabet(void)
 {
-    return write(1, &c, 1);
-}
+	char alp[28] = "abcdefghijklmnopqrstuvwxyz\n";
+	int i = 0;
 
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-    _putchar('_');
-    _putchar('p');
-    _putchar('u');
-    _putchar('t');
-    _putchar('c');
-    _putchar('h');
-    _putchar('a');
-    _putchar('r');
-    _putchar('\n');
-
-    return (0);
+	while (i < 27)
+	{
+		putchar(alp[i]);
+		i++;
+	}
 }
