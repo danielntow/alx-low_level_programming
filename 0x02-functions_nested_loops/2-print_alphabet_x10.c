@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*print_alphabet-function begins
+*print_alphabet-functioilphabet_x10 begins
 *
 *Return:function ends
 */
