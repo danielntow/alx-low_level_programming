@@ -1,43 +1,33 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
-* print_fibonacci - Prints the first 50 Fibonacci numbers
-*/
-void print_fibonacci(void)
+ * main - Prints the first 50 Fibonacci numbers
+ *
+ * Return: Always 0
+ */
+int main(void)
 {
-int i;
-unsigned int fib1 = 1, fib2 = 2, fib;
+    int i;
+    int fib[50];
 
-_putchar('1');
-_putchar(',');
-_putchar(' ');
-_putchar('2');
+    fib[0] = 1;
+    fib[1] = 2;
 
-for (i = 3; i <= 50; i++)
-{
-	fib = fib1 + fib2;
+    for (i = 2; i < 50; i++)
+    {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
 
-	_putchar(',');
-	_putchar(' ');
+    printf("%d", fib[0]);
 
-	print_number(fib);
+    for (i = 1; i < 50; i++)
+    {
+        printf(", %d", fib[i]);
+    }
 
-	fib1 = fib2;
-	fib2 = fib;
+    printf("\n");
+
+    return 0;
 }
 
-_putchar('\n');
-}
-
-/**
-* print_number - Prints a number using _putchar
-* @n: The number to be printed
-*/
-void print_number(unsigned int n)
-{
-if (n / 10)
-	print_number(n / 10);
-
-_putchar((n % 10) + '0');
-}
 
