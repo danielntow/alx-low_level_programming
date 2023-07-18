@@ -1,33 +1,15 @@
-#include <unistd.h>
-
+#include <stdio.h>
 /**
- * _putchar - Custom putchar function
- * @c: The character to be printed
+ *main-function begins
  *
- * Return: On success, returns the character printed.
- * On error, returns -1.
- */
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
-
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ *Return: function ends
  */
 int main(void)
 {
-    _putchar('_');
-    _putchar('p');
-    _putchar('u');
-    _putchar('t');
-    _putchar('c');
-    _putchar('h');
-    _putchar('a');
-    _putchar('r');
-    _putchar('\n');
+	char printer[10] = "_putchar\n";
+	int i;
 
-    return (0);
+	for (i = 0; i < 9; i++)
+		putchar (printer[i]);
+	return (0);
 }
