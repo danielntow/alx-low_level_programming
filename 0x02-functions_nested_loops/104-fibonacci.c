@@ -9,16 +9,16 @@
 int main(void)
 {
 int i;
-unsigned int a = 1;
-unsigned int b = 2;
-unsigned int c;
+unsigned long a = 1;
+unsigned long b = 2;
+unsigned long c;
 
-printf("%u, %u", a, b);
+printf("%lu, %lu", a, b);
 
 for (i = 3; i <= 98; i++)
 {
 	c = a + b;
-	printf(", %u", c);
+	printf(", %lu", c);
 	a = b;
 	b = c;
 }
