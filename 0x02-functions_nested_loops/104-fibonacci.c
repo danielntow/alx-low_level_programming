@@ -8,7 +8,7 @@ void print_fibonacci(void)
 {
 unsigned long term1 = 1;
 unsigned long term2 = 2;
-unsigned long nextTerm;
+unsigned long int nextTerm;
 unsigned int count;
 
 printf("%lu, %lu", term1, term2);
