@@ -10,8 +10,8 @@
 int main(void)
 {
 int term1 = 1;
-int term2 = 2;  
-int nextTerm; 
+int term2 = 2;
+int nextTerm;
 long int sum = 2;
 
 while (term2 <= 4000000)
