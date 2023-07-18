@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+*print_alphabet-function begins
+*
+*Return:function ends
+*/
 void print_alphabet_x10(void)
 {
 int i;
