@@ -7,22 +7,33 @@
 */
 
 
+void print_fibonacci(void);
+
 int main(void)
 {
-int current = 1;
-int previous = 2;
-int next;
+print_fibonacci();
 
-printf("%d, %d, ", current, previous);
+return 0;
+}
 
-for (int i = 3; i <= 98; i++) {
-next = current + previous;
-printf("%d, ", next);
-current = previous;
-previous = next;
+void print_fibonacci(void)
+{
+unsigned int i;
+unsigned int term1 = 1;
+unsigned int term2 = 2;
+unsigned int nextTerm;
+
+printf("%u, %u", term1, term2);
+
+for (i = 3; i <= 98; i++)
+{
+	nextTerm = term1 + term2;
+	printf(", %u", nextTerm);
+
+	term1 = term2;
+	term2 = nextTerm;
 }
 
 printf("\n");
-
-return (0);
 }
+
