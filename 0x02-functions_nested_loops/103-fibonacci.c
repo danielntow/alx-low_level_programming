@@ -1,11 +1,18 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point of the program
+ *
+ * Return: 0 upon successful execution
+ */
+
+
 int main(void)
 {
-int term1 = 1;    // First term
-int term2 = 2;    // Second term
-int nextTerm;     // Next term
-long long sum = 2; // Sum of even-valued terms, initialized with the second term (2)
+int term1 = 1;
+int term2 = 2;  
+int nextTerm; 
+long int sum = 2;
 
 while (term2 <= 4000000)
 {
@@ -20,8 +27,7 @@ while (term2 <= 4000000)
 	term2 = nextTerm;
 }
 
-printf("%lld\n", sum);
+printf("%ld\n", sum);
 
-return 0;
+return (0);
 }
-
