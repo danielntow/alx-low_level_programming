@@ -8,7 +8,7 @@
 
 int main(void)
 {
-int i;
+unsigned int i;
 unsigned long a = 1;
 unsigned long b = 2;
 unsigned long c;
@@ -27,4 +27,3 @@ printf("\n");
 
 return (0);
 }
-
