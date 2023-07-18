@@ -1,15 +1,23 @@
-#include <stdio.h>
+#include "main.h"
+#include <unistd.h>
+
 /**
- *main-function begins
+ *print_alphabet-function begins
  *
- *Return: function ends
+ *Return:function ends
  */
 int main(void)
 {
-	char printer[10] = "_putchar\n";
-	int i;
+    _putchar('_');
+    _putchar('p');
+    _putchar('u');
+    _putchar('t');
+    _putchar('c');
+    _putchar('h');
+    _putchar('a');
+    _putchar('r');
+    _putchar('\n');
 
-	for (i = 0; i < 9; i++)
-		putchar (printer[i]);
-	return (0);
+    return (0);
 }
+
