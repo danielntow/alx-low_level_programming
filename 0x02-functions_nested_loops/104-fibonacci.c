@@ -1,34 +1,22 @@
 #include <stdio.h>
 
 /**
-* main - Entry point of the program
-*
-* Return: 0 upon successful execution
+* print_fibonacci - Prints the first 98 Fibonacci numbers
+*                   separated by commas and followed by a newline.
 */
-
-
-void print_fibonacci(void);
-
-int main(void)
-{
-print_fibonacci();
-
-return 0;
-}
-
 void print_fibonacci(void)
 {
-unsigned int i;
-unsigned int term1 = 1;
-unsigned int term2 = 2;
-unsigned int nextTerm;
+unsigned long term1 = 1;
+unsigned long term2 = 2;
+unsigned long nextTerm;
+unsigned int count;
 
-printf("%u, %u", term1, term2);
+printf("%lu, %lu", term1, term2);
 
-for (i = 3; i <= 98; i++)
+for (count = 3; count <= 98; count++)
 {
 	nextTerm = term1 + term2;
-	printf(", %u", nextTerm);
+	printf(", %lu", nextTerm);
 
 	term1 = term2;
 	term2 = nextTerm;
@@ -36,4 +24,16 @@ for (i = 3; i <= 98; i++)
 
 printf("\n");
 }
+
+/**
+* main - Entry point of the program
+*
+* Return: Always 0
+*/
+int main(void)
+{
+print_fibonacci();
+return (0);
+}
+
 
