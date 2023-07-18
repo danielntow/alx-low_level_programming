@@ -6,17 +6,17 @@
 */
 void print_fibonacci(void)
 {
-unsigned long long term1 = 1;
-unsigned long long term2 = 2;
-unsigned long long nextTerm;
+unsigned long term1 = 1;
+unsigned long term2 = 2;
+unsigned long nextTerm;
 unsigned int count;
 
-printf("%llu, %llu", term1, term2);
+printf("%lu, %lu", term1, term2);
 
 for (count = 3; count <= 98; count++)
 {
 	nextTerm = term1 + term2;
-	printf(", %llu", nextTerm);
+	printf(", %lu", nextTerm);
 
 	term1 = term2;
 	term2 = nextTerm;
