@@ -1,12 +1,6 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of the program
- *
- * Return: Always 0
- */
-
-/**
  * main - fibonacci <3
  *
  * Purpose - no hardcode
