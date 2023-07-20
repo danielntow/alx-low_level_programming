@@ -4,14 +4,19 @@
 /**
  * print_square - check the square
  *
- * @size: number bywhich the size is gotten
+ * @size: number by which the size is gotten
  * Return: the square of the number
  */
 void print_square(int size)
 {
-	int sq, i, j;
+	int i, j;
 
-	sq = size * size;
+	if (size <= 0)
+	{
+		putchar('\n');
+		return;
+	}
+
 	for (i = 0; i < size; i++)
 	{
 		for (j = 0; j <= size; j++)
