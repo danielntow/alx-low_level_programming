@@ -16,5 +16,10 @@ void print_line(int n)
 		for (i = 0; i < n; i++)
 			putchar('-');
 	}
+	if (n <= 0)
+    {
+        putchar('\n');
+        return;
+    }
 	putchar('\n');
 }
