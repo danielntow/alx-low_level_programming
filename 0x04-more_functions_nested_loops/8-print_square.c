@@ -1,14 +1,15 @@
 #include <stdio.h>
 
-
 /**
  * print_square - check the square
  *
  * @size: number by which the size is gotten
- * Return: the square of the number
+ * Return: void
  */
+
 void print_square(int size)
 {
+
 	int i, j;
 
 	if (size <= 0)
