@@ -1,29 +1,27 @@
 #include <stdio.h>
 
-/**
- * print_square - check the square
- *
- * @size: number by which the size is gotten
- * Return: void
- */
+#include "main.h"
 
+/**
+ *print_square - check the code
+ *@size: integer return type
+ * Return: Always 0.
+ */
 void print_square(int size)
 {
+	int i;
+	int j;
 
-	int i, j;
-
+	for (i = 1; i <= size; i++)
+	{
+		for (j = 1; j <= size; j++)
+		{
+			_putchar('#');
+		}
+		_putchar('\n');
+	}
 	if (size <= 0)
 	{
-		putchar('\n');
-	}
-
-	for (i = 0; i < size; i++)
-	{
-		for (j = 0; j <= size; j++)
-		{
-			putchar('#');
-		}
-
-		putchar('\n');
+		_putchar('\n');
 	}
 }
