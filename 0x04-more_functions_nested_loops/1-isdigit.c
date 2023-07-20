@@ -1,7 +1,7 @@
 /**
  * _isdigit - checks if a number is a digit
  * @c: The character to be checked
- * Return 1 if digit and 0 if otherwise
+ * Return: 1 if digit and 0 if otherwise
  */
 
 int _isdigit(int c)
