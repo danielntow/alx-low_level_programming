@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * print_line - draws a straight line when it encounter a char
+ * print_line - checks the code
  *
- * @n: a number that determines the number of x a straight line is drawn
+ * @n: integer paramerera
  */
 void print_line(int n)
 {
@@ -13,10 +13,6 @@ void print_line(int n)
 	{
 		for (i = 0; i < n; i++)
 			putchar('-');
-	}
-	else
-	{
-		putchar('\n');
 	}
 	putchar('\n');
 }
