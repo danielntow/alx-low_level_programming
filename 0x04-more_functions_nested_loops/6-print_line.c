@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * print_line - checks the code
+ *print_line - checks the code
  *
- * @n: integer parameter
+ *@n: integer parameter
  */
 
 void print_line(int n)
