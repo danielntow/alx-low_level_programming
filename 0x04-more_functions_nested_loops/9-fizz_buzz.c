@@ -19,8 +19,6 @@ int main(void)
 			printf("%s", "Fizz ");
 		else if (i % 5 == 0 && i != 0)
 			printf("%s ", "Buzz");
-		else if (i % 3 == 0 && i % 5 == 0 && i != 0)
-			printf("%s ", "FizzBuss");
 		else
 			printf("%d ", i);
 	}
