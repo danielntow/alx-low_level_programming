@@ -3,10 +3,12 @@
 /**
  * main - Check the code
  *
- * Return: Always 0.
+ * Return: void
  */
+
 int main(void)
 {
+
 	int i;
 
 	for (i = 0; i <= 100; i++)
