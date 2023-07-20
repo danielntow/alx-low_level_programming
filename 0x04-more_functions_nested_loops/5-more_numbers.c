@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * more_numbers - print multiples of 0-14 10x
+ * more_numbers -  Print numbers from 0 to 14, 10 times.
  */
 
 void more_numbers(void)
