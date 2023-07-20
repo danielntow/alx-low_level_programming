@@ -1,27 +1,37 @@
+#include <stdlib.h>
 #include <stdio.h>
-
 /**
- * main - Check the code
+ *main - check the code
  *
- * Return: void
+ * Return: Always 0.
  */
-
 int main(void)
 {
-
 	int i;
 
-	for (i = 0; i < 100; i++)
+	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0 && i != 0)
-			printf("%s ", "FizzBuzz");
-		if (i % 3 == 0 && i != 0)
-			printf("%s", "Fizz ");
-		else if (i % 5 == 0 && i != 0)
-			printf("%s ", "Buzz");
+		if (i % 3 == 0 && i % 5 == 0)
+		{
+			printf("FizzBuzz");
+		}
+		else if (i % 3 == 0)
+		{
+			printf("Fizz");
+		}
+		else if (i % 5 == 0)
+		{
+			printf("Buzz");
+		}
 		else
-			printf("%d ", i);
+		{
+			printf("%i", i);
+		}
+		if (i != 100)
+		{
+			putchar(' ');
+		}
 	}
-
+	printf("\n");
 	return (0);
 }
