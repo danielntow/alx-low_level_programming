@@ -1,36 +1,36 @@
 #include <stdio.h>
 
-/**
-*print_traingle - check the code
-*@size: to dermine the triangle
-*Return: void
-*/
+#include "main.h"
 
+/**
+ *print_triangle - check the code
+ *@size: first return type
+ * Return: Always 0.
+ */
 void print_triangle(int size)
 {
-
-	int i = 0;
-	int j = 0;
+	int i;
+	int j;
 	int k = 0;
 
+	for (i = 1; i <= size; i++)
+	{
+		for (j = 1; j <= size; j++)
+		{
+			if (j >= size - k)
+			{
+				_putchar('#');
+			}
+			else
+			{
+				_putchar(' ');
+			}
+		}
+		k++;
+		_putchar('\n');
+	}
 	if (size <= 0)
 	{
-		putchar('\n');
-		return;
-	}
-
-	for (i = 0; i < size; i++)
-	{
-		for (k = size - i - 1; k > 0; k--)
-		{
-			putchar(' ');
-		}
-
-		for (j = 0; j <= i; j++)
-		{
-
-			putchar('#');
-		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
