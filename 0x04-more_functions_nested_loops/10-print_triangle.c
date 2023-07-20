@@ -3,7 +3,7 @@
 /**
 *print_traingle - check the code
 *@size: to dermine the triangle
-*Return: 0
+*Return: void
 */
 
 void print_triangle(int size)
