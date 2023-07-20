@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#include "main.h"
-
 /**
  *print_square - check the code
  *@size: integer return type
