@@ -1,7 +1,7 @@
 /**
- * mul - function to find the product of 2 numbers
- * @a: the int to be multiplied
- * @b: the other int
+ * mul - Multiplies the product of 2 integers
+ * @a: the first intger to be multiplied
+ * @b: the second integer to be multiples
  * Return: product of @a and @b
  */
 
