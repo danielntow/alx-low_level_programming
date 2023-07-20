@@ -4,6 +4,7 @@
  *print_line - checks the code
  *
  *@n: integer parameter
+ *Return: Always 0.
  */
 
 void print_line(int n)
