@@ -3,8 +3,9 @@
 /**
  * print_line - checks the code
  *
- * @n: integer paramerera
+ * @n: integer parameter
  */
+
 void print_line(int n)
 {
 	int i;
