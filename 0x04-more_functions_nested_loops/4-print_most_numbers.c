@@ -2,7 +2,6 @@
 
 /**
  * print_most_numbers - prints numbers from 0-9 but skips 4 and 5
- *
  */
 
 void print_most_numbers(void)
