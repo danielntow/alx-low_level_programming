@@ -15,12 +15,10 @@ void rev_string(char *s)
 
 	while (start < end)
 	{
-		// Swap characters at start and end positions
 		temp = s[start];
 		s[start] = s[end];
 		s[end] = temp;
 
-		// Move start and end positions towards the middle
 		start++;
 		end--;
 	}
