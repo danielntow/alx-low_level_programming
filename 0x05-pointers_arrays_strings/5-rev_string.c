@@ -6,7 +6,7 @@
  * @s: Pointer to the input string to be reversed.
  */
 
-void rev_string(char* s)
+void rev_string(char *s)
 
 {
 	int length = strlen(s);
