@@ -7,16 +7,22 @@
  */
 
 void rev_string(char *s)
-
 {
 	int length = strlen(s);
-	int i;
+	int start = 0;
+	int end = length - 1;
+	char temp;
 
-	for (i = length - 1; i >= 0; i--)
+	while (start < end)
 	{
-		*s = (s[i]);
-	}
+		// Swap characters at start and end positions
+		temp = s[start];
+		s[start] = s[end];
+		s[end] = temp;
 
-	putchar('\n');
+		// Move start and end positions towards the middle
+		start++;
+		end--;
+	}
 }
 
