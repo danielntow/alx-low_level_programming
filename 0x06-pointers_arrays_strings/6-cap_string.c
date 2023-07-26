@@ -1,37 +1,34 @@
 #include "main.h"
 #include <ctype.h>
+#include <string.h>
+
 
 /**
- * cap_string - Capitalizes all words in a string
- * @str: Pointer to the input string to be modified.
- *
- * Return: Pointer to the modified string.
+ *cap_string - change all lower case to upper
+ *@a: a pointer variable
+ *Return: a pointer
  */
 
-
-char *cap_string(char *str)
+char *cap_string(char *a)
 {
-	int capitalize_next =
-	    1;
-	for (int i = 0; str[i] != '\0'; i++)
+	int i;
+	int j;
+	int size = strlen(a);
+	char *delimit = ",;.!?\"(){}\n\t ";
+	*a = toupper(toascii(*a));
+
+	for (i = 0; i < size && size > 1; i++)
 	{
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-		    str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-		    str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-		    str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-		    str[i] == '}')
+		char m = *(a + i);
+		int charint = toascii(*(a + 1 + i));
+
+		for (j = 0; j < 13 && (i + 1) < size; j++)
 		{
-			capitalize_next = 1;
-		}
-		else
-		{
-			if (capitalize_next && islower(str[i]))
+			if (m == *(delimit + j))
 			{
-				str[i] = toupper(str[i]);
-				capitalize_next = 0;
+				*(a + i + 1) = toupper(charint);
 			}
 		}
 	}
-
-	return (str);
+	return (a);
 }
