@@ -16,19 +16,19 @@ void print_number(int n)
 		n = -n;
 	}
 
-	unsigned int thousands_digit = n / 1000;
-	unsigned int hundreds_digit = (n / 100) % 10;
-	unsigned int tens_digit = (n / 10) % 10;
-	unsigned int ones_digit = n % 10;
+	int divisor = 1;
+	int num = n;
 
-	if (thousands_digit != 0)
-		putchar('0' + thousands_digit);
+	while (num >= 10)
+	{
+		divisor *= 10;
+		num /= 10;
+	}
 
-	if (hundreds_digit != 0 || thousands_digit != 0)
-		putchar('0' + hundreds_digit);
-
-	if (tens_digit != 0 || hundreds_digit != 0 || thousands_digit != 0)
-		putchar('0' + tens_digit);
-
-	putchar('0' + ones_digit);
+	while (divisor != 0)
+	{
+		putchar('0' + n / divisor);
+		n %= divisor;
+		divisor /= 10;
+	}
 }
