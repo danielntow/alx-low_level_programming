@@ -9,11 +9,10 @@
  *Return: a pointer
  */
 
-char *cap_string(char *)
+char *cap_string(char *a)
 {
 	int i;
 	int j;
-	char *a;
 	int size = strlen(a);
 	char *delimit = ",;.!?\"(){}\n\t ";
 	*a = toupper(toascii(*a));
