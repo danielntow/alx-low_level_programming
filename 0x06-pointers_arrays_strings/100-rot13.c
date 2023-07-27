@@ -11,26 +11,30 @@
  */
 char *rot13(char *str)
 {
-	char *ptr = str;
+	int i = 0;
+	int j;
+	char *alphabets =
+	    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot13_alphabets =
+	    "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (*ptr)
+	while (str[i] != '\0')
 	{
-		char rot_offset;
+		j = 0;
 
-		if ((*ptr >= 'A' && *ptr <= 'Z') ||
-		    (*ptr >= 'a' && *ptr <= 'z'))
+		while (alphabets[j] != '\0')
 		{
-			if ((*ptr >= 'a' && *ptr <= 'z'))
-				rot_offset = 'a';
-			else
-				rot_offset = 'A';
+			if (str[i] == alphabets[j])
+			{
+				str[i] = rot13_alphabets[j];
+				break;
+			}
 
-			*ptr = ((*ptr - rot_offset + 13) % 26) + rot_offset;
+			j++;
 		}
 
-		ptr++;
+		i++;
 	}
 
 	return (str);
 }
-
