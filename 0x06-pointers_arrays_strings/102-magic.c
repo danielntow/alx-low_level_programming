@@ -1,15 +1,4 @@
 #include <stdio.h>
-#include "main.h"
-
-/**
- * main - Entry point of the program.
- *
- * Description: This function serves as the entry point of the program.
- * It initializes an array 'a', modifies the value of a[2] to 98 without
- * directly using the variable 'a', and then prints the modified value.
- *
- * Return: Always 0 (Success).
- */
 
 int main(void)
 {
