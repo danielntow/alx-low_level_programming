@@ -3,56 +3,80 @@
 #include "main.h"
 
 /**
- * infinite_add - Adds two numbers represented as strings.
- * @n1: The first number as a string.
- * @n2: The second number as a string.
- * @r: The buffer to store the result of the addition.
- * @size_r: The size of the buffer 'r'.
- *
- * Description: This function takes two positive numbers,
- * adds them digit by digit, and the result in the buffer 'r'. It handles
- * cases where the result cannot fit in the buffer and returns 0 in such cases.
- *
- * Return: A pointer to the resulting string 'r', or 0
+ * rev_string - reverse array
+ * @n: integer params
+ * Return: 0
  */
 
+void rev_string(char *n)
+{
+	int i = 0;
+	int j = 0;
+	char temp;
 
+	while (*(n + i) != '\0')
+	{
+		i++;
+	}
+	i--;
+
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
+	}
+}
+
+/**
+ * infinite_add - add 2 numbers together
+ * @n1: text representation of 1st number to add
+ * @n2: text representation of 2nd number to add
+ * @r: pointer to buffer
+ * @size_r: buffer size
+ * Return: pointer to calling function
+ */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carry = 0;
-	int sum;
-	int idx_r = size_r - 1;
+	int overflow = 0, i = 0, j = 0, digits = 0;
+	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	r[idx_r] = '\0';
-
-	for (int idx_n1 = strlen(n1) - 1, idx_n2 = strlen(n2) - 1;
-	     idx_n1 >= 0 || idx_n2 >= 0; idx_n1--, idx_n2--)
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
+		return (0);
+	while (j >= 0 || i >= 0 || overflow == 1)
 	{
-		sum = carry;
-		if (idx_n1 >= 0)
-			sum += n1[idx_n1] - '0';
-		if (idx_n2 >= 0)
-			sum += n2[idx_n2] - '0';
-
-		carry = sum / 10;
-
-		if (idx_r > 0)
-			r[--idx_r] = sum % 10 + '0';
-		else if (sum % 10 != 0)
-			return (0);
-	}
-
-	if (carry != 0)
-	{
-		if (idx_r > 0)
-			r[--idx_r] = carry + '0';
+		if (i < 0)
+			val1 = 0;
 		else
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
+			val2 = 0;
+		else
+			val2 = *(n2 + j) - '0';
+		temp_tot = val1 + val2 + overflow;
+		if (temp_tot >= 10)
+			overflow = 1;
+		else
+			overflow = 0;
+		if (digits >= (size_r - 1))
 			return (0);
+		*(r + digits) = (temp_tot % 10) + '0';
+		digits++;
+		j--;
+		i--;
 	}
-
-	if (idx_r > 0)
-		memmove(r, &r[idx_r], size_r - idx_r);
-
+	if (digits == size_r)
+		return (0);
+	*(r + digits) = '\0';
+	rev_string(r);
 	return (r);
 }
+
+
