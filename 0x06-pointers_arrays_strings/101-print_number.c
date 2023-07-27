@@ -16,10 +16,10 @@ void print_number(int n)
 		n = -n;
 	}
 
-	int thousands_digit = n / 1000;
-	int hundreds_digit = (n / 100) % 10;
-	int tens_digit = (n / 10) % 10;
-	int ones_digit = n % 10;
+	unsigned int thousands_digit = n / 1000;
+	unsigned int hundreds_digit = (n / 100) % 10;
+	unsigned int tens_digit = (n / 10) % 10;
+	unsigned int ones_digit = n % 10;
 
 	if (thousands_digit != 0)
 		putchar('0' + thousands_digit);
@@ -32,5 +32,3 @@ void print_number(int n)
 
 	putchar('0' + ones_digit);
 }
-
-
