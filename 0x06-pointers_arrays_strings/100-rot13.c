@@ -28,9 +28,9 @@ char *rot13(char *str)
 			*ptr = ((*ptr - rot_offset + 13) % 26) + rot_offset;
 		}
 
-		ptr++; // Move to the next character
+		ptr++;
 	}
 
-	return (str); // Return the modified string
+	return (str);
 }
 
