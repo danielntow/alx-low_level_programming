@@ -3,23 +3,23 @@
 
 /**
  * print_number - Prints an integer to the standard output using _putchar.
- * @num: The integer to be printed.
+ * @n: The integer to be printed.
  *
  * Return: void.
  */
 
-void print_number(int num)
+void print_number(int n)
 {
-	if (num < 0)
+	if (n < 0)
 	{
 		putchar('-');
-		num = -num;
+		n = -n;
 	}
 
-	int thousands_digit = num / 1000;
-	int hundreds_digit = (num / 100) % 10;
-	int tens_digit = (num / 10) % 10;
-	int ones_digit = num % 10;
+	int thousands_digit = n / 1000;
+	int hundreds_digit = (n / 100) % 10;
+	int tens_digit = (n / 10) % 10;
+	int ones_digit = n % 10;
 
 	if (thousands_digit != 0)
 		putchar('0' + thousands_digit);
@@ -32,4 +32,5 @@ void print_number(int num)
 
 	putchar('0' + ones_digit);
 }
+
 
