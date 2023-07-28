@@ -5,9 +5,11 @@
  * @n: input value
  * Return: n value
  */
+
 char *leet(char *n)
 {
 	int i, j;
+
 	char s1[] = "aAeEoOtTlL";
 	char s2[] = "4433007711";
 
