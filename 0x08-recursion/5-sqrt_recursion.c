@@ -2,13 +2,12 @@
 #include <stdio.h>
 
 /**
- * _sqrt_recursion - Calculates the natural square root of a number.
- * @n: The number to find the square root of.
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: the number to find the square root of
  *
- * Return: The natural square root of n,
- *         or -1 if n does not have a natural square root.
+ * Return: the natural square root of n, or -1 if n does not have a natural
+ * square root
  */
-
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
@@ -16,8 +15,9 @@ int _sqrt_recursion(int n)
 	if (n == 0 || n == 1)
 		return (n);
 
-
-	int start = 1, end = n, ans;
+	int start = 1;
+	int  end = n;
+	 int ans;
 
 	while (start <= end)
 	{
@@ -35,3 +35,4 @@ int _sqrt_recursion(int n)
 	}
 	return (ans);
 }
+
