@@ -12,20 +12,14 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	else if (n == 0 || n == 1)
+
+	if (n == 0 || n == 1)
 		return (n);
-	else
-	{
-		int guess = 1;
 
-		while (guess * guess <= n)
-		{
-			if (guess * guess == n)
-				return (guess);
+	int guess = _sqrt_recursion(n - 1);
 
-			guess++;
-		}
+	if ((guess * guess) <= n)
+		return (guess);
 
-		return (-1);
-	}
+	return (-1);
 }
