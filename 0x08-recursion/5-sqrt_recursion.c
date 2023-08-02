@@ -1,25 +1,48 @@
+
 #include "main.h"
 #include <stdio.h>
 
+long int helpersqrt(long int n, long int count);
 /**
- * _sqrt_recursion - returns the natural square root of a number
- * @n: the number to find the square root of
- *
- * Return: the natural square root of n, or -1 if n does not have a natural
- * square root
+ * helpersqrt - check the code
+ * @n: an integer
+ * @count: an integer
+ * Return: square root
+ */
+long int helpersqrt(long int n, long int count)
+{
+	if (n == 1)
+	{
+		return (1);
+	}
+	if (count > 4096)
+	{
+		count = 4097;
+	}
+	if (n == 4)
+	{
+		return (4);
+	}
+	if (count * count == n)
+	{
+		return (count);
+	}
+	if (count <= 0)
+	{
+		return (-1);
+	}
+	count--;
+	return (helpersqrt(n, count));
+}
+/**
+ * _sqrt_recursion - check the code
+ * @n: an integer
+ * Return: Always 0.
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
+	long int count = n / 4;
+	long int m = n;
 
-	if (n == 0 || n == 1)
-		return (n);
-
-	int guess = _sqrt_recursion(n - 1);
-
-	if ((guess * guess) <= n)
-		return (guess);
-
-	return (-1);
+	return ((int)helpersqrt(m, count));
 }
