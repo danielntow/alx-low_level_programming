@@ -2,10 +2,12 @@
 
 /**
  * main - Entry point of the program
- *@argc: total count of argv
- *@argv: an array`
+ *
  * Description: This function prints the name of the program
  *              as it is executed, along with a new line.
+ *
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings containing the command-line arguments.
  *
  * Return: Always 0 (success)
  */
@@ -25,4 +27,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-
