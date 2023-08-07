@@ -20,7 +20,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int length = len_s1 + len_s2;
 
 	array = (char *)malloc(
-	    (length + 1) * sizeof(char)); // Include space for the null-terminator
+	    (length + 1) * sizeof(char));
 
 	if (array == NULL)
 		return (NULL);
@@ -35,7 +35,7 @@ char *str_concat(char *s1, char *s2)
 		array[i + j] = s2[j];
 	}
 
-	array[i + j] = '\0'; // Null-terminate the concatenated string
+	array[i + j] = '\0';
 
 	return (array);
 }
