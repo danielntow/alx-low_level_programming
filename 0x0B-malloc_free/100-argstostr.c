@@ -15,23 +15,26 @@
 
 char *argstostr(int ac, char **av)
 {
+	int i, j, total_length, position;
+	char *concatenated;
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	int total_length = 0;
-	int i, j;
+	total_length = 0;
+
 
 	for (i = 0; i < ac; i++)
 	{
 		total_length += strlen(av[i]) + 1;
 	}
 
-	char *concatenated = (char *)malloc(total_length * sizeof(char));
+	concatenated = (char *)malloc(total_length * sizeof(char));
 
 	if (concatenated == NULL)
 		return (NULL);
 
-	int position = 0;
+	position = 0;
 
 	for (i = 0; i < ac; i++)
 	{
