@@ -1,4 +1,4 @@
-I can help you with creating the static library libmy.a. First, you need to compile all the functions into object files using the gcc command with the -c flag. For example:
+
 
 gcc -c _putchar.c _islower.c _isalpha.c _abs.c _isupper.c _isdigit.c _strlen.c _puts.c _strcpy.c _atoi.c _strcat.c _strncat.c _strncpy.c _strcmp.c _memset.c _memcpy.c _strchr.c _strspn.c _strpbrk.c _strstr.c
 
@@ -16,4 +16,11 @@ gcc main.c -L. -lmy -o myprogram
 
 This will compile and link your main program with the libmy.a library and create an executable file called myprogram.
 
-I hope this helps you with creating the static library libmy.a. Do you have any other questions? 😊
+
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c
+ar -rc libmy.a *.o
+ar -t libmy.a
+nm libmy.a
+ranlib libmy.a
+gcc -std=gnu89 main.c -L. -lmy -o quote (

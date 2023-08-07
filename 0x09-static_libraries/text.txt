@@ -16,3 +16,12 @@ gcc main.c -L. -lmy -o myprogram
 
 This will compile and link your main program with the libmy.a library and create an executable file called myprogram.
 
+
+
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c
+ar -rc libmy.a *.o
+ar -t libmy.a
+nm libmy.a
+ranlib libmy.a
+gcc -std=gnu89 main.c -L. -lmy -o quote (
