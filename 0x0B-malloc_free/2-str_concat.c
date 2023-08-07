@@ -15,8 +15,8 @@ char *str_concat(char *s1, char *s2)
 	char *array;
 	int i, j;
 
-	unsigned int len_s1 = strlen(s1);
-	unsigned int len_s2 = strlen(s2);
+	unsigned int len_s1 = strlen(s1) - 1;
+	unsigned int len_s2 = strlen(s2) - 1;
 	unsigned int length = len_s1 + len_s2;
 
 	array = (char *)malloc(
