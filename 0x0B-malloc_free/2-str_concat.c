@@ -12,30 +12,33 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *array;
-	int i, j;
-
-	unsigned int len_s1 = strlen(s1);
-	unsigned int len_s2 = strlen(s2);
-	unsigned int length = len_s1 + len_s2;
-
-	array = (char *)malloc(
-	    (length + 1) * sizeof(char));
-
-	if (array == NULL)
-		return (NULL);
-
-	for (i = 0; s1[i] != '\0'; i++)
+	if (s1 == NULL)
 	{
-		array[i] = s1[i];
+		s1 = "";
 	}
 
-	for (j = 0; s2[j] != '\0'; j++)
+	if (s2 == NULL)
 	{
-		array[i + j] = s2[j];
+		s2 = "";
 	}
 
-	array[i + j] = '\0';
+	int len1 = strlen(s1);
+	int len2 = strlen(s2);
 
-	return (array);
+	char *new_str = malloc(len1 + len2 + 1);
+
+	for (int i = 0; i < len1; i++)
+	{
+		new_str[i] = s1[i];
+	}
+
+	for (int i = 0; i < len2; i++)
+	{
+		new_str[len1 + i] = s2[i];
+	}
+
+	new_str[len1 + len2] = '\0';
+
+	return (new_str);
 }
+
