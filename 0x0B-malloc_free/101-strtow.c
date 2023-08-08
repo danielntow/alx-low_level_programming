@@ -48,7 +48,7 @@ int count_words(char *str)
  */
 char **strtow(char *str)
 {
-	int num_words, word_index, word_start, in_word;
+	int num_words, word_index, word_start, in_word, i, word_length, j;
 	char **words;
 
 
@@ -64,7 +64,7 @@ char **strtow(char *str)
 	if (words == NULL)
 		return (NULL);
 
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (!is_space(str[i]) && !in_word)
 		{
@@ -74,13 +74,13 @@ char **strtow(char *str)
 		else if ((is_space(str[i]) || str[i + 1] == '\0') && in_word)
 		{
 			in_word = 0;
-			int word_length = (i - word_start) + 1;
+			word_length = (i - word_start) + 1;
 
 			words[word_index] =
 			    (char *)malloc(word_length * sizeof(char));
 			if (words[word_index] == NULL)
 			{
-				for (int j = 0; j < word_index; j++)
+				for (j = 0; j < word_index; j++)
 					free(words[j]);
 				free(words);
 				return (NULL);
