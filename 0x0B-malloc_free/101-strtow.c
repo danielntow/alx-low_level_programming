@@ -74,7 +74,7 @@ char **strtow(char *str)
 		else if ((is_space(str[i]) || str[i + 1] == '\0') && in_word)
 		{
 			in_word = 0;
-			word_length = (i - word_start) + 1;
+			word_length = (i - word_start) + 2;
 
 			words[word_index] =
 			    (char *)malloc(word_length * sizeof(char));
