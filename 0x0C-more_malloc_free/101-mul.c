@@ -13,43 +13,32 @@
 * @new_size: the new size, in bytes, of the new memory block
 * Return: a pointer to the new memory block
 */
+
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-void *new_ptr;
-unsigned int min_size;
+	void *ptr2;
+	unsigned int x = 0;
+	unsigned int dup_size;
 
-/* if ptr is NULL, call is equivalent to malloc(new_size) */
-if (ptr == NULL)
-return (malloc(new_size));
+	if (ptr == NULL)
 
-/* if new_size is zero and ptr is not NULL, call is equivalent to free(ptr) */
-if (new_size == 0 && ptr != NULL)
-{
-free(ptr);
-return (NULL);
+		return (malloc(new_size));
+	if (new_size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	if (new_size == old_size)
+		return (ptr);
+	ptr2 = malloc(new_size);
+	if (ptr2 == NULL)
+		return (NULL);
+	dup_size = (old_size < new_size) ? old_size : new_size;
+	while (x < dup_size)
+	{
+		*((char *)ptr2 + x) = *((char *)ptr + x);
+		x++;
+	}
+	free(ptr);
+	return (ptr2);
 }
-
-/* if new_size is equal to old_size, do not do anything and return ptr */
-if (new_size == old_size)
-return (ptr);
-
-/* allocate memory for the new block using malloc */
-new_ptr = malloc(new_size);
-
-/* check if malloc failed and return NULL if true */
-if (new_ptr == NULL)
-return (NULL);
-
-/* find the minimum of old and new sizes */
-min_size = old_size < new_size ? old_size : new_size;
-
-/* copy the contents of the old block to the new block */
-memcpy(new_ptr, ptr, min_size);
-
-/* free the old block */
-free(ptr);
-
-/* return the pointer to the new block */
-return (new_ptr);
-}
-
