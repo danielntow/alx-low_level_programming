@@ -17,8 +17,7 @@ int main(void)
 
 	for (i = 0; file_name[i] != '\0'; i++)
 	{
-		if (file_name[i] == '\0')
-			return (file_name[i] = '\0');
+
 		putchar(file_name[i]);
 	}
 
