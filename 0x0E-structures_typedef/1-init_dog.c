@@ -1,4 +1,4 @@
-#include <stddef.h>  /* For NULL */
+#include <stddef.h>
 #include "dog.h"
 
 /**
