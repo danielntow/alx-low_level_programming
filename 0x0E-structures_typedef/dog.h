@@ -7,6 +7,7 @@
  * Description: This structure defines a dog's information including its name,
  * age, and owner's name.
  */
+
 struct dog
 {
 	char *name;
