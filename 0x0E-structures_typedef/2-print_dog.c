@@ -8,6 +8,7 @@
 * Description: This function prints the content of a struct dog including its
 * name, age, and owner. If any element is NULL, "(nil)" is printed instead.
 */
+
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
@@ -19,3 +20,4 @@ void print_dog(struct dog *d)
 		printf("Owner: %s\n", d->owner ? d->owner : "(nil)");
 	}
 }
+
