@@ -1,10 +1,6 @@
 #include <stddef.h>  /* For NULL */
 #include "dog.h"
 
-#ifndef INIT_DOG_C
-#define INIT_DOG_C
-
-
 /**
  * init_dog - Initializes a struct dog with provided values.
  * @d: Pointer to the struct dog variable to be initialized.
@@ -26,5 +22,5 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	}
 }
 
-#endif
+
 
