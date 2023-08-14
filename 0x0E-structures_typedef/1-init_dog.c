@@ -1,4 +1,5 @@
 #include <stddef.h>  /* For NULL */
+#include "dog.h"
 
 #ifndef INIT_DOG_C
 #define INIT_DOG_C
