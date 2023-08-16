@@ -13,21 +13,21 @@
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	/* Check if array is NULL or size is <= 0 */
-	if (array == NULL || size <= 0)
-		return (-1);
-
-
 	int i;
 
-	for (i = 0; i < size; i++)
-	{
-		/* Check if the cmp function doesn't return 0 for the current element */
-		if (cmp(array[i]) != 0)
-			return (i); /* Return the index of the matching element */
-	}
+	if (size < 0)
+		return (-1);
 
-	/* No element matched the condition, return -1 */
+	if (array && cmp)
+	{
+		for (i = 0; i < size; i++)
+		{
+			if (cmp(*(array + i)) != 0)
+			{
+				return (i);
+			}
+		}
+	}
 	return (-1);
 }
 
