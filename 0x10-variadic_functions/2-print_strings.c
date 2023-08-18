@@ -2,51 +2,39 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+
 /**
- * print_all - Prints values of different types.
- * @format: The format string specifying types of arguments.
- * @...: The values to be printed.
+ * print_strings - Prints strings followed by a new line.
+ * @separator: The string to be printed between the strings.
+ * @n: The number of strings passed to the function.
+ * @...: The strings to be printed.
  *
  * Return: void
  */
-void print_all(const char *const format, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list args;
-	unsigned int i = 0;
-	char *separator = "";
+	va_list args; /* Declare a variable to hold the variable arguments */
+	unsigned int i;
+	char *str;
 
-	va_start(args, format);
+	va_start(args, n); /* Initialize the variable argument list */
 
-	while (format && format[i])
+	for (i = 0; i < n; i++)
 	{
-		switch (format[i])
-		{
-		case 'c':
-			printf("%s%c", separator, va_arg(args, int));
-			break;
-		case 'i':
-			printf("%s%d", separator, va_arg(args, int));
-			break;
-		case 'f':
-			printf("%s%f", separator, va_arg(args, double));
-			break;
-		case 's':
-		{
-			char *str = va_arg(args, char*);
+		str = va_arg(args, char*); /* Get the current string pointer */
 
-			if (str == NULL)
-				str = "(nil)";
-			printf("%s%s", separator, str);
-		}
-		break;
-		}
-		separator = ", ";
-		i++;
-		if (format[i] == '\0')
-			break;
+		if (str != NULL)
+			printf("%s", str); /* Print the string */
+		else
+			printf("(nil)"); /* Print (nil) if the string is NULL */
+
+		/* Print separator if it's not NULL and not the last element */
+		if (separator != NULL && i < n - 1)
+			printf("%s", separator);
 	}
-	va_end(args);
 
-	printf("\n");
+	va_end(args); /* Clean up the variable argument list */
+
+	printf("\n"); /* Print a new line at the end */
 }
 
