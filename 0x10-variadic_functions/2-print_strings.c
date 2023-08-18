@@ -12,35 +12,28 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
+	va_list args; /* Declare a variable to hold the variable arguments */
 	unsigned int i;
-	va_list args;
-
-	/* Check if the number of strings is 0 or separator is NULL */
-	if (!n || !separator)
-		return;
+	char *str;
 
 	va_start(args, n); /* Initialize the variable argument list */
 
 	for (i = 0; i < n; i++)
 	{
-		char *arg;
+		str = va_arg(args, char *); /* Get the current string pointer */
 
-		arg = va_arg(args, char *);
-
-		/* Replace NULL strings with "(nil)" */
-		if (arg == NULL)
-			arg = "(nil)";
-
-		/* Print the current string */
-		printf("%s", arg);
+		if (str != NULL)
+			printf("%s", str); /* Print the string */
+		else
+			printf("(nil)"); /* Print (nil) if the string is NULL */
 
 		/* Print separator if it's not NULL and not the last element */
-		if (i < n - 1 && separator != NULL)
+		if (separator != NULL && i < n - 1)
 			printf("%s", separator);
 	}
 
 	va_end(args); /* Clean up the variable argument list */
 
-	putchar('\n'); /* Print a new line at the end */
+	printf("\n"); /* Print a new line at the end */
 }
 
