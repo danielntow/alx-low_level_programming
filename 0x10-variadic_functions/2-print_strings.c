@@ -2,10 +2,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-#include "variadic_functions.h"
-#include <stdarg.h>
-#include <stdio.h>
-
 /**
  * print_all - Prints values of different types.
  * @format: The format string specifying types of arguments.
