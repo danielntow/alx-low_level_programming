@@ -22,7 +22,9 @@ int sum_them_all(const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		int arg = va_arg(args, int);
+		int arg;
+
+		arg = va_arg(args, int);
 
 		sum += arg; /* Add the current number to the sum */
 	}
