@@ -23,7 +23,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		char *arg = va_arg(args, char *);
+		char *arg;
+
+		arg = va_arg(args, char *);
 
 		/* Replace NULL strings with "(nil)" */
 		if (arg == NULL)
@@ -41,3 +43,4 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	putchar('\n'); /* Print a new line at the end */
 }
+
