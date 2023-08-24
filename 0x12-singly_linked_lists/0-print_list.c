@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include "lists.h"
 
@@ -9,23 +8,19 @@
  *
  * Return: Number of nodes in the list.
  */
-
 size_t print_list(const list_t *h)
 {
-	int num_nodes = 0;
+	size_t count = 0;
 
 	while (h != NULL)
 	{
-		printf("[%d] ", h->len);
 		if (h->str == NULL)
-			printf("(nil) ");
+			printf("[0] (nil)\n");
 		else
-			printf("%s", h->str);
-		printf("\n");
-		num_nodes++;
+			printf("[%d] %s\n", h->len, h->str);
+		count++;
 		h = h->next;
 	}
-
-	return (num_nodes);
+	return (count);
 }
 
