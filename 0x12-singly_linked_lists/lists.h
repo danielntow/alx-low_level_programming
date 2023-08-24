@@ -24,5 +24,8 @@ typedef struct list_s
 /* Function to print all elements of a list */
 size_t print_list(const list_t *h);
 
+/* Function to get the number of elements in a list */
+size_t list_len(const list_t *h);
+
 #endif /* LIST_H */
 
