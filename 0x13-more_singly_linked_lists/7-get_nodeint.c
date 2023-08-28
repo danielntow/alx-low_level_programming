@@ -25,8 +25,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	while (current && count <= index)
 	{
-		printf("count is %zu/n and index is %d is [ %d ]\n", count,
-		       index, current->n);
 		if (count == index)
 		{
 			return (current);
