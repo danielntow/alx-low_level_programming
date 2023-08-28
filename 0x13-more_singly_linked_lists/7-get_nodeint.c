@@ -12,18 +12,34 @@
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	listint_t *current = head;
-	unsigned int count = 0;
+	listint_t *current;
 
-	while (current != NULL)
+	unsigned int count;
+
+	count = 0;
+
+	current = head;
+
+	if (head == NULL || index < 0)
+		return (NULL);
+
+	while (current && count <= index)
 	{
+		/*printf("count is %zu/n and index is %d is [ %d ]\n", count, */
+		/* index, current->n); */
 		if (count == index)
-			return (current); /* Return the node at the given index */
+		{
+			return (current);
+		}
 
-		current = current->next;
-		count++;
+		else
+		{
+
+			current = current->next;
+			count++;
+		}
 	}
 
-	return (NULL); /* Return NULL if the node does not exist */
+	return (NULL);
 }
 
