@@ -9,46 +9,43 @@
  * @n: Data to be stored in the new node.
  * Return: Address of the new node, or NULL if insertion failed.
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *newNode, *current;
-	unsigned int count;
+	listint_t *new_node, *current;
+	unsigned int count = 0;
 
-	count = 0;
-	current = *head;
-
-	if (*head == NULL)
+	if (head == NULL)
 		return (NULL);
 
-	newNode = malloc(sizeof(listint_t));
-	if (newNode == NULL)
-		return (NULL);
+	new_node =
+	    malloc(sizeof(listint_t)); /* Allocate memory for the new node */
+	if (new_node == NULL)
+		return (NULL); /* Return NULL if memory allocation failed */
 
-	newNode->n = n;
-	newNode->next = NULL;
+	new_node->n = n; /* Set the data of the new node */
 
 	if (idx == 0)
 	{
-		newNode->next = *head;
-		*head = newNode;
-		return (newNode);
+		new_node->next = *head; /* Insert at the beginning */
+		*head = new_node;
+		return (new_node);
 	}
 
-	while (current && count < idx - 1)
+	current = *head;
+	while (current != NULL)
 	{
-		count++;
+		if (count == idx - 1)
+		{
+			new_node->next =
+			    current->next; /* Insert at the specified index */
+			current->next = new_node;
+			return (new_node);
+		}
 		current = current->next;
-			}
-
-	if (current == NULL)
-	{
-		free(newNode); /* Clean up the allocated memory */
-		return (NULL);
+		count++;
 	}
 
-	newNode->next = current->next;
-	current->next = newNode;
-
-	return (newNode);
+	free(new_node); /* Free the new node if insertion failed */
+	return (NULL);
 }
+
