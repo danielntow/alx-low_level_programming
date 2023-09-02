@@ -2,17 +2,19 @@
 #include "main.h"
 
 /**
- * clear_bit - Sets the value of a bit to 0 at a given index
- * @n: Pointer to the unsigned long integer
- * @index: The index of the bit to set to 0
- * Return: 1 if successful, or -1 if an error occurred
+ * set_bit - Sets the value of a bit at a given index to 1.
+ * @n: Pointer to the unsigned long integer.
+ * @index: Index of the bit to set (0-based).
+ * Return: 1 if it worked, or -1 if an error occurred.
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (index >= sizeof(unsigned long int) * 8)
-		return (-1);  /* Error: index out of bounds */
+	unsigned long int mask = 1UL << index;
 
-	*n = *n & ~(1 << index); /* Clear the bit at the specified index */
+	if (index >= sizeof(unsigned long int) * 8)
+		return (-1); /* Index out of range */
+
+	*n = *n | mask;
 
 	return (1);
 }
