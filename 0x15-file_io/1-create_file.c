@@ -1,32 +1,34 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * read_textfile - Read a text file and print its contents to STDOUT.
- * @filename: The name of the text file to be read.
- * @letters: The number of letters to be read.
+ * create_file - Creates a file with specified content.
+ * @filename: A pointer to the name of the file to create.
+ * @text_content: A pointer to the text content to write to the file.
  *
- * Return: The actual number of bytes read and printed (w).
- *         0 when the function fails or filename is NULL.
+ * Return: If the function fails -1 (failure).
+ *         Otherwise, 1 (success).
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	char *buffer;
-	ssize_t file_descriptor;
-	ssize_t bytes_read;
-	ssize_t bytes_written;
+	int file_descriptor, write_result, text_length = 0;
 
-	file_descriptor = open(filename, O_RDONLY);
-	if (file_descriptor == -1)
-		return (0);
+	if (filename == NULL)
+		return (-1);
 
-	buffer = malloc(sizeof(char) * letters);
-	bytes_read = read(file_descriptor, buffer, letters);
-	bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
+	if (text_content != NULL)
+	{
+		for (text_length = 0; text_content[text_length];)
+			text_length++;
+	}
 
-	free(buffer);
+	file_descriptor = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	write_result = write(file_descriptor, text_content, text_length);
+
+	if (file_descriptor == -1 || write_result == -1)
+		return (-1);
+
 	close(file_descriptor);
-	return (bytes_written);
-}
 
+	return (1);
+}
 
