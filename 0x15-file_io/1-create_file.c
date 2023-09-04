@@ -1,42 +1,32 @@
-#include <fcntl.h>
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
 
 /**
- * create_file - Creates a file with specified permissions and writes text to it.
- * @filename: The name of the file to create or open.
- * @text_content: A NULL-terminated string to write to the file.
+ * read_textfile - Read a text file and print its contents to STDOUT.
+ * @filename: The name of the text file to be read.
+ * @letters: The number of letters to be read.
  *
- * Return: 1 on success, -1 on failure (file cannot be created, written, etc.).
- * The created file has permissions: rw-------. If the file already exists, it
- * will be truncated. If filename is NULL, return -1. If text_content is NULL,
- * create an empty file.
+ * Return: The actual number of bytes read and printed (w).
+ *         0 when the function fails or filename is NULL.
  */
-
-int create_file(const char *filename, char *text_content)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	if (filename == NULL)
-		return (-1);
+	char *buffer;
+	ssize_t file_descriptor;
+	ssize_t bytes_read;
+	ssize_t bytes_written;
 
-	int fd =
-	    open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600); /* rw------- */
+	file_descriptor = open(filename, O_RDONLY);
+	if (file_descriptor == -1)
+		return (0);
 
-	if (fd == -1)
-		return (-1);
+	buffer = malloc(sizeof(char) * letters);
+	bytes_read = read(file_descriptor, buffer, letters);
+	bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 
-	if (text_content != NULL)
-	{
-		ssize_t bytes_written =
-		    write(fd, text_content, strlen(text_content));
-		if (bytes_written == -1)
-		{
-			close(fd);
-			return (-1);
-		}
-	}
-
-	close(fd);
-	return (1);
+	free(buffer);
+	close(file_descriptor);
+	return (bytes_written);
 }
+
+
