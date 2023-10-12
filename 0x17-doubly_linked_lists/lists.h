@@ -19,11 +19,6 @@ typedef struct dlistint
 	struct dlistint *prev;
 } dlistint_t;
 
-/**
- * create_dlistint_node - Create a new node for a doubly linked list
- * @n: The value to assign to the new node
- * Return: A pointer to the new node, or NULL on failure
- */
 dlistint_t *create_dlistint_node(int n);
 size_t print_dlistint(const dlistint_t *h);
 size_t dlistint_len(const dlistint_t *h);
@@ -36,3 +31,4 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 #endif /* LISTS_H */
+
