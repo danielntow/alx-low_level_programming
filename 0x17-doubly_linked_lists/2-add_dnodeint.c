@@ -16,9 +16,6 @@ if (newNode == NULL)
 	return (NULL);
 
 newNode->n = n;
-newNode->prev = NULL;
-newNode->next = NULL;
-
 return (newNode);
 }
 
