@@ -11,10 +11,11 @@
 size_t print_dlistint(const dlistint_t *h)
 {
     dlistint_t const *current = h;
+
     size_t node_count = 0;
 
     if (h == NULL)
-        return (node_count);
+        return (0);
 
     while (current != NULL)
     {
