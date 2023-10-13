@@ -2,6 +2,13 @@
 import os
 
 
+# Get the current working directory
+current_directory = os.getcwd()
+result_file_path = os.path.join(current_directory, "102-result")
+
+# Rest of the code remains the same
+
+
 def is_palindrome(num):
     return str(num) == str(num)[::-1]
 
