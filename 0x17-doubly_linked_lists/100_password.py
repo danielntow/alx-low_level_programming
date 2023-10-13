@@ -1,37 +1,72 @@
 import subprocess
 import os
 
+# Get the current working directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Function to test a password
 
 
 def test_password(password):
-    # Specify the full path to the "crackme4" executable
-    crackme4_path = os.path.join(os.path.dirname(
-        os.path.abspath(__file__)), "crackme4")
-    command = [crackme4_path, password]
+    crackme_path = os.path.join(current_dir, "crackme4.pyc")
+    command = ["python3", crackme_path, password]
+    try:
+        result = subprocess.run(
+            command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        return "OK" in result.stdout
+    except subprocess.CalledProcessError:
+        return False
 
-    result = subprocess.run(command, stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE, text=True)
-    return "OK" in result.stdout
+
+# Flag to track whether the password was found
+password_found = False
+
+# Loop to find the correct password
+for char in range(32, 127):  # ASCII characters from space to tilde (~)
+    char = chr(char)
+    if test_password(char):
+        with open("100-password", "w") as file:
+            file.write(char)
+        print(f"Password found: {char}")
+        password_found = True
+        break
+
+if not password_found:
+    print("Password not found.")
+
+# import subprocess
+# import os
+
+# # Get the current directory where the Python script is located
+# current_dir = os.path.dirname(os.path.abspath(__file__))
+# crackme4_path = os.path.join(current_dir, "crackme4")
 
 
-# Get the directory of the current script
-script_directory = os.path.dirname(os.path.abspath(__file__))
+# def test_password(password):
+#     command = [crackme4_path, password]
+#     result = subprocess.run(command, stdout=subprocess.PIPE,
+#                             stderr=subprocess.PIPE, text=True)
+#     return result.stdout.strip() == "OK"
 
-# Iterate through different characters to find the correct password
-correct_password = ""
-characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-for char in characters:
-    test_password_result = test_password(correct_password + char)
-    if test_password_result:
-        correct_password += char
-        if correct_password == "OK":
-            break
+# def find_password():
+#     charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+#     password = ""
 
-# Determine the path for the "100-password" file in the script directory
-result_file_path = os.path.join(script_directory, "100-password")
+#     for char in charset:
+#         test_password_result = test_password(password + char)
+#         if test_password_result:
+#             password += char
+#         else:
+#             return None
 
-# Save the correct password to the "100-password" file in the same directory as the script
-with open(result_file_path, "w") as file:
-    file.write(correct_password)
+#     return password
+
+
+# password = find_password()
+
+# if password is not None:
+#     with open("100-password", "w") as file:
+#         file.write(password)
+# else:
+#     print("Password not found.")
