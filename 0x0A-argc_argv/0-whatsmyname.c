@@ -1,19 +1,5 @@
 #include <stdio.h>
 
-#ifndef _3_CALC_H_
-#define _3_CALC_H_
-
-/**
- * struct op - Struct op
- * @op: The operator
- * @f: The function associated
- */
-typedef struct op
-{
-	char *op;
-	int (*f)(int a, int b);
-} op_t;
-
 /**
  * main - Entry point of the program
  *
@@ -41,4 +27,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-#endif /* _3_CALC_H_ */

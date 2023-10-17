@@ -13,5 +13,9 @@ if pwd == ok:
 else:
     print('KO')
 
+
 with open('100-password', 'w') as f:
     f.write(ok)
+
+
+print('this is printing the password which is =', ok)

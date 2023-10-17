@@ -20,8 +20,6 @@ for i in range(100, 1000):
         if is_palindrome(product) and product > largest_palindrome:
             largest_palindrome = product
 
-
-print('oyewa', largest_palindrome)
 # Save the result to a file (without newline or extra space)
 with open(result_file_path, "w") as file:
     file.write(str(largest_palindrome))
