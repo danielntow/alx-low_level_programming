@@ -15,6 +15,7 @@ hash_node_t *current, *temp;
 if (ht->array == NULL)
 {
 	free(ht);
+	return;
 }
 
 for (i = 0; i < ht->size; ++i)
