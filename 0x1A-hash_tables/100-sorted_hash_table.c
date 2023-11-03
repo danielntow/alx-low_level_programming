@@ -1,8 +1,5 @@
-#include "hash_tables.h"
+
 #include "shash_tables.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 /* Function to create a sorted hash table */
 shash_table_t *shash_table_create(unsigned long int size)
@@ -142,3 +139,22 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /* Function to delete the sorted hash table */
+void shash_table_delete(shash_table_t *ht)
+{
+    shash_node_t *current = ht->shead;
+
+    if (ht == NULL)
+        return;
+
+    while (current != NULL)
+    {
+        shash_node_t *temp = current;
+        current = current->snext;
+        free(temp->key);
+        free(temp->value);
+        free(temp);
+    }
+
+    free(ht->array);
+    free(ht);
+}
