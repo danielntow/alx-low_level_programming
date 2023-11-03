@@ -9,14 +9,14 @@ shash_table_t *shash_table_create(unsigned long int size)
 {
     shash_table_t *ht = malloc(sizeof(shash_table_t));
     if (ht == NULL)
-        return NULL;
+        return (NULL);
 
     ht->size = size;
     ht->array = calloc(size, sizeof(shash_node_t *));
     ht->shead = NULL;
     ht->stail = NULL;
 
-    return ht;
+    return (ht);
 }
 
 /* Function to insert a key-value pair into the sorted hash table */
@@ -26,10 +26,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
     shash_node_t *new_node = malloc(sizeof(shash_node_t));
 
     if (ht == NULL || key == NULL || *key == '\0')
-        return 0;
+        return (0);
 
     if (new_node == NULL)
-        return 0;
+        return (0);
 
     new_node->key = strdup(key);
     new_node->value = strdup(value);
@@ -82,7 +82,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
         ht->array[index] = new_node;
     }
 
-    return 1;
+    return (1);
 }
 
 /* Function to retrieve the value associated with a key in the sorted hash table */
@@ -91,16 +91,16 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
     shash_node_t *current = ht->shead;
 
     if (ht == NULL || key == NULL || *key == '\0')
-        return NULL;
+        return (NULL);
 
     while (current != NULL)
     {
         if (strcmp(current->key, key) == 0)
-            return current->value;
+            return (current->value);
         current = current->snext;
     }
 
-    return NULL;
+    return (NULL);
 }
 
 /* Function to print the hash table in order using the sorted linked list */
@@ -125,7 +125,6 @@ void shash_table_print(const shash_table_t *ht)
 /* Function to print the hash table key/value pairs in reverse order using the sorted linked list */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-
     shash_node_t *current = ht->stail;
 
     if (ht == NULL)
