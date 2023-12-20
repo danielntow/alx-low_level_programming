@@ -6,7 +6,7 @@ NAME = school           # Name of the executable
 all: $(NAME)  # Default target 'all' depends on the executable 'school'
 
 $(NAME): $(OBJ)
-	$(CC) -o $@ $^ -Wall -Werror
+	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
 	$(CC) -c $< -o $@ -Wall -Werror
