@@ -6,7 +6,7 @@ NAME = school           # Name of the executable
 all: $(NAME)  # Default target 'all' depends on the executable 'school'
 
 $(NAME): $(OBJ)
-	$(CC) -o $@ $^ -Wall -Werror  # Compiles the executable using all .o files
+	$(CC) -o $@ $^ -Wall -Werror
 
 %.o: %.c
-	$(CC) -c $< -o $@ -Wall -Werror  # Compiles each .c file to .o file
+	$(CC) -c $< -o $@ -Wall -Werror
