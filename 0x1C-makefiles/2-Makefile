@@ -1,12 +1,12 @@
 CC = gcc
-SRC = main.c schools.c  # List of .c files
-OBJ = $(SRC:.c=.o)      # .o files derived from .c files
-NAME = school           # Name of the executable
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
 
-all: $(NAME)  # Default target 'all' depends on the executable 'school'
+all: $(NAME)
 
-$(NAME): $(OBJ)
+school: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o: %.c m.h
 	$(CC) -c -o $@ $<
