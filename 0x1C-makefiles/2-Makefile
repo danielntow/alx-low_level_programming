@@ -1,14 +1,9 @@
-CC = gcc
-SRC = main.c schools.c  # List of .c files
-OBJ = $(SRC:.c=.o)      # .o files derived from .c files
-NAME = school           # Name of the executable
-
-.PHONY: all  # Declaring 'all' as a phony target
-
-all: $(NAME)  # Default target 'all' depends on the executable 'school'
-
-$(NAME): $(OBJ)
-	$(CC) -o $@ $^ -Wall -Werror
-
-%.o: %.c
-	$(CC) -c $< -o $@ -Wall -Werror
+CC=gcc
+SRC= main.c school.c
+OBJ= $(SRC:%.c=%.o)
+NAME= school
+all: $(NAME)
+school: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+%.o: %.c m.h
+	$(CC) -c -o $@ $<
