@@ -1,5 +1,5 @@
 CC = gcc
-SRC = main.c school.c  # List of .c files
+SRC = main.c schools.c  # List of .c files
 OBJ = $(SRC:.c=.o)      # .o files derived from .c files
 NAME = school           # Name of the executable
 
@@ -9,4 +9,4 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
-	$(CC) -c $< -o $@ -Wall -Werror
+	$(CC) -c -o $@ $<
