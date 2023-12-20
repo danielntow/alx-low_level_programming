@@ -8,7 +8,7 @@ RM = rm -f
 
 all: $(NAME)
 
-school: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) -o $@ $^
 
 %.o: %.c m.h
