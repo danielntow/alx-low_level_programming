@@ -12,4 +12,3 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	$(CC) -c $< -o $@ -Wall -Werror
-
