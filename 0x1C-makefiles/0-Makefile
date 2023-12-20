@@ -1,0 +1,4 @@
+all: school
+
+school: main.c schools.c m.h
+	gcc -o school main.c schools.c -Wall -Werror
