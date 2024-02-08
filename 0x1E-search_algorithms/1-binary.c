@@ -33,7 +33,7 @@ while (left <= right)
 	printf("\n");
 
 	if (array[mid] == value)
-		return (int)mid;
+		return ((int)mid);
 	else if (array[mid] < value)
 		left = mid + 1;
 	else
