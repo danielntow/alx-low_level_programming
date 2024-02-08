@@ -16,7 +16,7 @@ int bound = 1;
 int low, high;
 
 if (array == NULL || size == 0)
-	return -1;
+	return (-1);
 
 while (bound < (int)size && array[bound] < value)
 {
@@ -29,7 +29,7 @@ high = (bound < (int)size) ? bound : (int)size - 1;
 
 printf("Value found between indexes [%d] and [%d]\n", low, high);
 
-return my_binary_search(array, low, high, value);
+return (my_binary_search(array, low, high, value));
 }
 
 /**
@@ -58,12 +58,12 @@ while (low <= high)
 	printf("\n");
 
 	if (array[mid] == value)
-		return mid;
+		return (mid);
 	else if (array[mid] < value)
 		low = mid + 1;
 	else
 		high = mid - 1;
 }
 
-return -1;
+return (-1);
 }
