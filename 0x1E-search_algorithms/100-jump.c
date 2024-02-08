@@ -1,15 +1,5 @@
 #include "search_algos.h"
-
-/**
-* minimum - return the minimum of two numbers
-* @left: first number
-* @right: second number
-* Return: Return the minimum
-*/
-int minimum(int left, int right)
-{
-return (left <= right ? left : right);
-}
+int minimum(int left, int right);
 /**
 * jump_search - searches for a value in a sorted array
 * of integers using jump search algorithm
